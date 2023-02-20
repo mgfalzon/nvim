@@ -23,6 +23,11 @@ return require('packer').startup(function(use)
     tag = '0.1.0',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  -- autocompletion
+  use "hrsh7th/nvim-cmp"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "L3MON4D3/LuaSnip"
+  -- lsps
   use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
