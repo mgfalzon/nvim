@@ -13,7 +13,6 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'navarasu/onedark.nvim'
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
@@ -23,6 +22,11 @@ return require('packer').startup(function(use)
     tag = '0.1.0',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  -- themes
+  use 'shaunsingh/nord.nvim'
+  use ({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
+  use 'navarasu/onedark.nvim'
+  use 'olimorris/onedarkpro.nvim'
   -- autocompletion
   use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-nvim-lsp"
