@@ -13,6 +13,7 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+  -- UI
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
@@ -22,6 +23,23 @@ return require('packer').startup(function(use)
     tag = '0.1.0',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    requires = {
+        {"nvim-tree/nvim-web-devicons"},
+        --Please make sure you install markdown and markdown_inline parser
+        {"nvim-treesitter/nvim-treesitter"}
+    }
+  })
+  -- git
+  use 'lewis6991/gitsigns.nvim'
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  -- additional features
+  use "Pocco81/auto-save.nvim"
+  use 'numToStr/Comment.nvim'
+  use "windwp/nvim-autopairs"
   -- themes
   use 'shaunsingh/nord.nvim'
   use ({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
